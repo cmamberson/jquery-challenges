@@ -34,8 +34,33 @@
    //jQuery equivelent to window.onload = function{}
    //code in here wont run until page loads
    $(function(){
+//Changes Header color
+     let headerOne = $("h1");
+     let beenClicked = false
+
+     headerOne.click(function(){
+       if (beenClicked == false){
+          $(this).toggleClass(headerOne.css("color", "#FF0000"));
+          beenClicked = true;
+       } else {
+         $(this).toggleClass(headerOne.css("color", "#000000"));
+         beenClicked = false;
+       }
 
 
+     });
+
+//Hides Odd links
+     let links = $(".section:even");
+     links.hide();
+//Replaces text and hides images
+     $('p').each(function() {
+            var bacon = $(this).text();
+            $(this).text(bacon.replace('Bacon', 'LASER VISION'));
+      });
+//Removes last 2 posts
+      $(".post:last").remove();
+      $(".post:last").remove();
 
    })
 

@@ -37,12 +37,64 @@
  */
 
 (function(){
-
   //jQuery equivelent to window.onload = function{}
   //code in here wont run until page loads
   $(function(){
 
+    //Team One
+      var teamOneShootButton = $("#teamone-shoot");
+      var teamOneShoots = $("#teamone-numshots");
+      var teamOneScores = $("#teamone-numhits");
+      var psu = new Audio('assets/audio/Cheer.mp3');
 
+      teamOneShootButton.click(function(){
+
+        var numChance = Math.random() * 100; //creates a random number between 0 and 1 and multiplies it by 100
+        let newTeamOneTry = parseInt(teamOneShoots.html()) + 1;
+          teamOneShoots.html(newTeamOneTry);
+
+
+        if (numChance > 50){
+          let newTeamOneScore = parseInt(teamOneScores.html()) +1;
+          teamOneScores.html(newTeamOneScore);
+          $("#seeThrough").css("background-color", "#0000FF");
+        };
+
+        psu.play(); //plays audio
+      });
+
+    //Team Two
+      var teamTwoShootButton = $("#teamtwo-shoot");
+      var teamTwoShoots = $("#teamtwo-numshots");
+      var teamTwoScores = $("#teamtwo-numhits");
+      var osu = new Audio('assets/audio/Boo.mp3')
+
+      teamTwoShootButton.click(function(){
+        var numChance = Math.random() * 100; //creates a random number between 0 and 1 and multiplies it by 100
+        let newTeamTwoTry = parseInt(teamTwoShoots.html()) + 1;
+        teamTwoShoots.html(newTeamTwoTry);
+
+          if (numChance > 50){
+              let newTeamTwoScore = parseInt(teamTwoScores.html()) +1;
+              teamTwoScores.html(newTeamTwoScore);
+              $("#seeThrough").css("background-color","#FF0000");
+            };
+            osu.play(); //plays audio
+          });
+
+    //Reset
+      var resetButton = $("#reset");
+      var numOfReset = $("#num-resets");
+
+      resetButton.click(function(){
+        let timesReset = parseInt(numOfReset.html()) + 1;
+        teamOneShoots.html(0);
+        teamOneScores.html(0);
+        teamTwoShoots.html(0);
+        teamTwoScores.html(0);
+        numOfReset.html(timesReset);
+
+      });
 
   })
 

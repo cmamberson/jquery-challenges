@@ -33,4 +33,14 @@
   function setText(text) {
     return $('#save-me').val(text);
   }
+
+  saveButton.click(function(){
+    localStorage.setItem("savedText", getText());
+  })
+
+  loadButton.click(function(){
+  var load = localStorage.getItem("savedText");
+  $('#save-me').val(load);
+})
+
 })();

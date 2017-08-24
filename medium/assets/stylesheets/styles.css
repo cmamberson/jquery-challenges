@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Exo|Play|Ubuntu');
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background: url('../images/FootballBackground.jpeg') no-repeat fixed;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Ubuntu';
+}
+
+h1{
+  color: #FFFFFF;
+  font-family: 'Play';
+  text-align: center;
+}
+
+h2{
+  color: #FFFFFF;
+  font-family: 'Exo';
+  text-align: center;
+}
+
+button{
+  font-family: 'Ubuntu';
+  background: #fff56a;
+  color: #000000;
+  border-radius: 2px;
+  border: 2px solid #FFFFFF;
+  padding: 5px 10px 5px 10px;
+}
+#osuPic{
+  width: 200px;
+  height: 200px;
+}
+
+#psuPic{
+  width: 300px;
+  height: 200px;
+}
+
+#team1{
+  float:left;
+  padding: 30px;
+
+}
+
+#team2{
+  float:right;
+  padding: 30px;
+}
+
+#team1, #team2{
+  color: #FFFFFF;
+  width: 300px;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#resetDiv{
+color: #FFFFFF;
+display:flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+}
+
+#seeThrough{
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 300px 20px 300px;
+  border: solid 3px #000000;
+}
